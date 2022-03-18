@@ -1,4 +1,5 @@
-# CompozeLabs Feedback Frontend
+![CompozeLabs Logo](/docs/CompozeLabsLogo512.png)
+# Feedback Frontend
 
 Welcome interviewee! We wanted to give you an idea for how we develop at CompozeLabs. CompozeLabs builds custom software for clients looking to leverage unique integrations to differentiate themselves from others. Some examples are: a fullstack solution for a dispensary, unique backend data processing pipelines, and building out infrastructure automation for existing development teams to deliver code faster. 
  
