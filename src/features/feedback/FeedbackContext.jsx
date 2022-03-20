@@ -28,7 +28,7 @@ function FeedbackProvider({
             doSubmit,
             isSubmitted,
         }
-    ), [currentName, currentComments])
+    ), [currentName, currentComments, isSubmitted])
 
     return (
         <FeedbackContext.Provider value={feedback}>

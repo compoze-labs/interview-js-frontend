@@ -6,8 +6,7 @@ import FeedbackForm from "./FeedbackForm"
 
 describe("the FeedbackForm", () => {
 
-    // todo: why is this failing??
-    xit("can render and submit feedback", () => {
+    it("can render and submit feedback", () => {
         const repo = new FakeFeedbackRepository()
         const container = render(
             <FeedbackProvider feedbackRepository={repo}>
