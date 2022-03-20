@@ -1,4 +1,5 @@
 import React from "react"
+import FeedbackForm from "./features/feedback/FeedbackForm"
 
 const appStyle = {
     textAlign: "center",
@@ -16,6 +17,7 @@ function App() {
     return (
         <div style={appStyle} className="App">
             <header className="App-header" />
+            <FeedbackForm />
         </div>
     )
 }
