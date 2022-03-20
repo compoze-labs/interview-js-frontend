@@ -13,10 +13,17 @@ The purpose of this interview is to get an idea of how you would approach proble
 This repository is intended as an MVP for a product for providing feedback for a US-based company. The current MVP allows us to input feedback into the custom feedback form and integrate that into several downstream services that the company uses for tracking customer sentiment. 
 
 # Development
+This repository starts up the frontend for the Feedback application. It is a simple React App that hosts a small form and sends the information to our backend via `POST /feedback`. The idea is that this repository isn't necessarily perfect - there are intentionally issues that we may need to address, that the developer has left as tech debt in order to get to MVP.
 
 ### Startup
 ```bash
 $ npm start
+```
+> You might want to make sure you've started up the backend Express JS as well in a separate terminal :)
+
+### Testing
+```bash
+$ npm test
 ```
 
 ### Linting
