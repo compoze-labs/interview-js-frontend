@@ -68,15 +68,28 @@ const SubmitButton = styled.button`
 `
 
 export default function FeedbackForm() {
+    const {
+        name,
+        setCurrentName,
+        comments,
+        setCurrentComments
+    } = useFeedbackContext()
+
     return (
         <div>
             <Title>Your Feedback is Appreciated!</Title>
             <Card>
                 <NameLabel>Name</NameLabel>
-                <NameInput />
+                <NameInput
+                    value={name}
+                    onChange={(event) => setCurrentName(event.target.value)}
+                />
 
                 <FeedbackLabel>Comments</FeedbackLabel>
-                <FeedbackArea />
+                <FeedbackArea
+                    value={comments}
+                    onChange={(event) => setCurrentComments(event.target.value)}
+                />
                 <SubmitButton type="button" onClick={() => {}}>Submit</SubmitButton>
             </Card>
         </div>

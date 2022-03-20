@@ -1,21 +1,21 @@
+import React from "react"
 import { act, render } from "@testing-library/react"
 import FakeFeedbackRepository from "../../__fixtures__/FakeFeedbackRepository"
 import FeedbackProvider, { useFeedbackContext } from "./FeedbackContext"
 
-describe("the FeedbackProvider", () => { 
-
+describe("the FeedbackProvider", () => {
     const feedbackRepo = new FakeFeedbackRepository()
 
     let setCurrentNameHooked
     let setCurrentCommentsHooked
     let submitHooked
-    const TestScaffold = () => {
-        const { 
-            name, 
-            setCurrentName, 
-            comments, 
+    function TestScaffold() {
+        const {
+            name,
+            setCurrentName,
+            comments,
             setCurrentComments,
-            doSubmit
+            doSubmit,
         } = useFeedbackContext()
 
         setCurrentNameHooked = setCurrentName
@@ -30,15 +30,11 @@ describe("the FeedbackProvider", () => {
         )
     }
 
-    const renderContext = () => {
-        return render(
-            <FeedbackProvider
-                feedbackRepository={feedbackRepo}
-            >
-                <TestScaffold />
-            </FeedbackProvider>
-        )
-    }
+    const renderContext = () => render(
+        <FeedbackProvider feedbackRepository={feedbackRepo}>
+            <TestScaffold />
+        </FeedbackProvider>,
+    )
 
     const name = (container) => container.getByTestId("name").textContent
     const comments = (container) => container.getByTestId("comments").textContent
@@ -48,7 +44,7 @@ describe("the FeedbackProvider", () => {
             const container = renderContext()
             expect(name(container)).toBe("")
         })
-    
+
         it("allows us to set the current name", () => {
             const container = renderContext()
             act(() => {
@@ -63,7 +59,7 @@ describe("the FeedbackProvider", () => {
             const container = renderContext()
             expect(name(container)).toBe("")
         })
-    
+
         it("allows us to set the current comments", () => {
             const container = renderContext()
             act(() => {
@@ -86,9 +82,7 @@ describe("the FeedbackProvider", () => {
 
         expect(feedbackRepo.sentFeedback).toStrictEqual([{
             name: "Bilbo Baggins",
-            comments: "Was a hobbit from the Shire."
+            comments: "Was a hobbit from the Shire.",
         }])
     })
-
-
 })

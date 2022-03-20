@@ -1,14 +1,13 @@
 
 export default class FakeFeedbackRepository {
-
-    constructor () {
+    constructor() {
         this.sentFeedback = []
     }
 
     sendFeedback(name, comments) {
         this.sentFeedback.push({
             name,
-            comments
+            comments,
         })
         return Promise.resolve()
     }

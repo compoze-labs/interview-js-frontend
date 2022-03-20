@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "styled-components"
+import FeedbackRepository from "./data/FeedbackRepository"
+import FeedbackProvider from "./features/feedback/FeedbackContext"
 import FeedbackForm from "./features/feedback/FeedbackForm"
 
 const AppContainer = styled.div`
@@ -25,7 +27,9 @@ function App() {
     return (
         <AppContainer>
             <CenteredAppWithGutters>
-                <FeedbackForm />
+                <FeedbackProvider feedbackRepository={new FeedbackRepository()}>
+                    <FeedbackForm />
+                </FeedbackProvider>
             </CenteredAppWithGutters>
         </AppContainer>
     )

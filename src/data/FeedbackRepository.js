@@ -1,7 +1,7 @@
 
 export default class FeedbackRepository {
-
-    sendFeedback(name, comments) {
+    // eslint-disable-next-line class-methods-use-this
+    sendFeedback() {
         // todo
     }
 }

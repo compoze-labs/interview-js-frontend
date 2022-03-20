@@ -21,15 +21,17 @@ module.exports = {
         "jest",
     ],
     rules: {
-        "react/jsx-indent": [2, 4, ],
+        "react/jsx-indent": [2, 4],
         indent: ["error", 4, {
             SwitchCase: 1,
-        }, ],
-        "linebreak-style": ["error", "unix", ],
-        quotes: ["error", "double", ],
-        semi: ["error", "never", ],
-        "comma-dangle": ["warn", "always", ],
-        "no-multiple-empty-lines": ["warn", { max: 2, }, ],
+        } ],
+        "linebreak-style": ["error", "unix"],
+        quotes: ["error", "double" ],
+        semi: ["error", "never" ],
+        "comma-dangle": ["warn", "always-multiline"],
+        "no-multiple-empty-lines": ["warn", { max: 2 }],
+        "react/prop-types": [0],
+        "react/jsx-indent-props": [0]
     },
-    ignorePatterns: ["**/*.svg", "**/*.css", ],
+    ignorePatterns: ["**/*.svg", "**/*.css" ],
 }
