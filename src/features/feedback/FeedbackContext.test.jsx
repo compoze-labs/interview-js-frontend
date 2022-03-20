@@ -40,6 +40,7 @@ describe("the FeedbackProvider", () => {
 
     const name = (container) => container.getByTestId("name").textContent
     const comments = (container) => container.getByTestId("comments").textContent
+    const isSubmitted = (container) => container.getByTestId("isSubmitted").textContent
 
     describe("the name field", () => {
         it("originally sets the name as blank", () => {
@@ -78,6 +79,8 @@ describe("the FeedbackProvider", () => {
             setCurrentCommentsHooked("Was a hobbit from the Shire.")
         })
 
+        expect(isSubmitted(container)).toBe("false")
+
         act(() => {
             submitHooked()
         })
@@ -86,5 +89,6 @@ describe("the FeedbackProvider", () => {
             name: "Bilbo Baggins",
             comments: "Was a hobbit from the Shire.",
         }])
+        expect(isSubmitted(container)).toBe("true")
     })
 })
