@@ -72,7 +72,8 @@ export default function FeedbackForm() {
         name,
         setCurrentName,
         comments,
-        setCurrentComments
+        setCurrentComments,
+        doSubmit
     } = useFeedbackContext()
 
     return (
@@ -81,16 +82,18 @@ export default function FeedbackForm() {
             <Card>
                 <NameLabel>Name</NameLabel>
                 <NameInput
+                    data-testid="name-field"
                     value={name}
                     onChange={(event) => setCurrentName(event.target.value)}
                 />
 
                 <FeedbackLabel>Comments</FeedbackLabel>
                 <FeedbackArea
+                    data-testid="comments-field"
                     value={comments}
                     onChange={(event) => setCurrentComments(event.target.value)}
                 />
-                <SubmitButton type="button" onClick={() => {}}>Submit</SubmitButton>
+                <SubmitButton type="button" onClick={() => doSubmit()}>Submit</SubmitButton>
             </Card>
         </div>
     )
