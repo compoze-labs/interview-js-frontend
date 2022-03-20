@@ -17,6 +17,7 @@ This repository starts up the frontend for the Feedback application. It is a sim
 
 ### Startup
 ```bash
+$ npm install
 $ npm start
 ```
 > You might want to make sure you've started up the backend Express JS as well in a separate terminal :)
