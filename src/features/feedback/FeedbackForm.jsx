@@ -67,13 +67,21 @@ const SubmitButton = styled.button`
     }
 `
 
+const ThankYouMessage = styled.span`
+    display: block;
+    font-size: 20px;
+    width: 75%;
+    text-align: left;
+`
+
 export default function FeedbackForm() {
     const {
         name,
         setCurrentName,
         comments,
         setCurrentComments,
-        doSubmit
+        doSubmit,
+        isSubmitted,
     } = useFeedbackContext()
 
     return (
@@ -93,7 +101,9 @@ export default function FeedbackForm() {
                     value={comments}
                     onChange={(event) => setCurrentComments(event.target.value)}
                 />
-                <SubmitButton type="button" onClick={() => doSubmit()}>Submit</SubmitButton>
+                {!isSubmitted
+                    ? <SubmitButton type="button" onClick={() => doSubmit()}>Submit</SubmitButton>
+                    : <ThankYouMessage>Thank you for your feedback!</ThankYouMessage> }
             </Card>
         </div>
     )

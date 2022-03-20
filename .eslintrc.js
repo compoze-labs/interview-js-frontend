@@ -31,7 +31,7 @@ module.exports = {
         "comma-dangle": ["warn", "always-multiline"],
         "no-multiple-empty-lines": ["warn", { max: 2 }],
         "react/prop-types": [0],
-        "react/jsx-indent-props": [0]
+        "react/jsx-indent-props": [0],
     },
     ignorePatterns: ["**/*.svg", "**/*.css" ],
 }

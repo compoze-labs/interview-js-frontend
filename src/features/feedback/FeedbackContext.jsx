@@ -12,9 +12,11 @@ function FeedbackProvider({
 }) {
     const [currentName, setCurrentName] = useState("")
     const [currentComments, setCurrentComments] = useState("")
+    const [isSubmitted, setIsSubmitted] = useState(false)
 
     const doSubmit = () => {
         feedbackRepository.sendFeedback(currentName, currentComments)
+        setIsSubmitted(true)
     }
 
     const feedback = useMemo(() => (
@@ -24,6 +26,7 @@ function FeedbackProvider({
             comments: currentComments,
             setCurrentComments,
             doSubmit,
+            isSubmitted,
         }
     ), [currentName, currentComments])
 

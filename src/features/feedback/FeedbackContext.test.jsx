@@ -16,6 +16,7 @@ describe("the FeedbackProvider", () => {
             comments,
             setCurrentComments,
             doSubmit,
+            isSubmitted,
         } = useFeedbackContext()
 
         setCurrentNameHooked = setCurrentName
@@ -26,6 +27,7 @@ describe("the FeedbackProvider", () => {
             <div>
                 <div data-testid="name">{`${name}`}</div>
                 <div data-testid="comments">{`${comments}`}</div>
+                <div data-testid="isSubmitted">{`${isSubmitted}`}</div>
             </div>
         )
     }
@@ -70,7 +72,7 @@ describe("the FeedbackProvider", () => {
     })
 
     it("submits the feedback", () => {
-        renderContext()
+        const container = renderContext()
         act(() => {
             setCurrentNameHooked("Bilbo Baggins")
             setCurrentCommentsHooked("Was a hobbit from the Shire.")
